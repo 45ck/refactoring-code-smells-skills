@@ -88,6 +88,11 @@ uninstall.sh                         global uninstaller
 LICENSE                              MIT
 ```
 
+## Related workflow agents
+
+- [quality-reviewer](https://github.com/45ck/workflow-agents) - Rank smells, debt, and refactoring priorities
+- [backend-engineer](https://github.com/45ck/workflow-agents) - Apply refactoring decisions in implementation work
+
 ## Related skill packs
 
 - [business-analysis-skills](https://github.com/45ck/business-analysis-skills) - Business analysis techniques, workflows, and quality checks
