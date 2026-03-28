@@ -90,8 +90,8 @@ LICENSE                              MIT
 
 ## Related workflow agents
 
-- [quality-reviewer](https://github.com/45ck/workflow-agents) - Rank smells, debt, and refactoring priorities
-- [backend-engineer](https://github.com/45ck/workflow-agents) - Apply refactoring decisions in implementation work
+- [quality-reviewer](https://github.com/45ck/skill-harness) - Rank smells, debt, and refactoring priorities
+- [backend-engineer](https://github.com/45ck/skill-harness) - Apply refactoring decisions in implementation work
 
 ## Related skill packs
 
