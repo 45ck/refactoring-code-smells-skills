@@ -1,0 +1,143 @@
+{
+  "name": "refactoring-code-smells-pack",
+  "version": "0.1.0",
+  "type": "skill-pack",
+  "summary": "Refactoring and code smells pack for Claude Code-style workflows.",
+  "recommended_order": [
+    "code-smell-detector",
+    "anti-pattern-detector",
+    "refactoring-candidate-ranker",
+    "extract-method-advisor",
+    "extract-class-advisor",
+    "dependency-simplifier",
+    "dead-code-detector",
+    "duplication-reviewer",
+    "hidden-dependency-detector",
+    "global-state-risk-reviewer",
+    "testability-refactor-planner"
+  ],
+  "skills": [
+    {
+      "id": "code-smell-detector",
+      "path": "skills/code-smell-detector/SKILL.md",
+      "purpose": "Identify code smells in a change, file, module, or codebase and explain why they increase maintenance cost, defect risk, or design friction.",
+      "handoffs": [
+        "refactoring-candidate-ranker",
+        "duplication-reviewer",
+        "testability-refactor-planner"
+      ]
+    },
+    {
+      "id": "anti-pattern-detector",
+      "path": "skills/anti-pattern-detector/SKILL.md",
+      "purpose": "Detect design and implementation anti-patterns and translate them into concrete technical risks and remediation options.",
+      "handoffs": [
+        "dependency-simplifier",
+        "global-state-risk-reviewer",
+        "refactoring-candidate-ranker"
+      ]
+    },
+    {
+      "id": "refactoring-candidate-ranker",
+      "path": "skills/refactoring-candidate-ranker/SKILL.md",
+      "purpose": "Rank refactoring opportunities by payoff, urgency, blast radius, and implementation effort so teams know what to fix first.",
+      "handoffs": [
+        "extract-method-advisor",
+        "extract-class-advisor",
+        "testability-refactor-planner"
+      ]
+    },
+    {
+      "id": "extract-method-advisor",
+      "path": "skills/extract-method-advisor/SKILL.md",
+      "purpose": "Identify long, mixed-responsibility methods and propose safe extract-method refactors with clear seams and expected outcomes.",
+      "handoffs": [
+        "code-smell-detector",
+        "testability-refactor-planner",
+        "dependency-simplifier"
+      ]
+    },
+    {
+      "id": "extract-class-advisor",
+      "path": "skills/extract-class-advisor/SKILL.md",
+      "purpose": "Detect classes with swollen responsibilities and propose extract-class refactors that improve cohesion and reduce coupling.",
+      "handoffs": [
+        "code-smell-detector",
+        "dependency-simplifier",
+        "refactoring-candidate-ranker"
+      ]
+    },
+    {
+      "id": "dependency-simplifier",
+      "path": "skills/dependency-simplifier/SKILL.md",
+      "purpose": "Reduce unnecessary coupling by identifying brittle dependencies, reducing fan-in or fan-out complexity, and clarifying module boundaries.",
+      "handoffs": [
+        "hidden-dependency-detector",
+        "testability-refactor-planner",
+        "refactoring-candidate-ranker"
+      ]
+    },
+    {
+      "id": "dead-code-detector",
+      "path": "skills/dead-code-detector/SKILL.md",
+      "purpose": "Find dead, unreachable, obsolete, or unreferenced code and assess whether it should be removed, guarded, or retained temporarily.",
+      "handoffs": [
+        "refactoring-candidate-ranker",
+        "duplication-reviewer",
+        "code-smell-detector"
+      ]
+    },
+    {
+      "id": "duplication-reviewer",
+      "path": "skills/duplication-reviewer/SKILL.md",
+      "purpose": "Identify structural, logical, and semantic duplication and recommend the safest consolidation strategy.",
+      "handoffs": [
+        "extract-method-advisor",
+        "extract-class-advisor",
+        "refactoring-candidate-ranker"
+      ]
+    },
+    {
+      "id": "hidden-dependency-detector",
+      "path": "skills/hidden-dependency-detector/SKILL.md",
+      "purpose": "Detect hidden dependencies such as ambient state, implicit IO, globals, framework magic, or time randomness coupling that harms predictability.",
+      "handoffs": [
+        "dependency-simplifier",
+        "global-state-risk-reviewer",
+        "testability-refactor-planner"
+      ]
+    },
+    {
+      "id": "global-state-risk-reviewer",
+      "path": "skills/global-state-risk-reviewer/SKILL.md",
+      "purpose": "Assess risks introduced by shared mutable global state and recommend containment, encapsulation, or elimination strategies.",
+      "handoffs": [
+        "hidden-dependency-detector",
+        "dependency-simplifier",
+        "testability-refactor-planner"
+      ]
+    },
+    {
+      "id": "testability-refactor-planner",
+      "path": "skills/testability-refactor-planner/SKILL.md",
+      "purpose": "Turn smell and anti-pattern findings into a refactor plan that improves isolation, determinism, seam quality, and automated testability.",
+      "handoffs": [
+        "extract-method-advisor",
+        "extract-class-advisor",
+        "dependency-simplifier"
+      ]
+    }
+  ],
+  "templates": [
+    "templates/smell-catalog-template.md",
+    "templates/anti-pattern-review-template.md",
+    "templates/refactoring-backlog-template.csv",
+    "templates/extract-method-template.md",
+    "templates/extract-class-template.md",
+    "templates/dependency-simplification-template.md",
+    "templates/dead-code-audit-template.csv",
+    "templates/duplication-matrix-template.csv",
+    "templates/hidden-dependency-audit-template.md",
+    "templates/testability-refactor-plan-template.md"
+  ]
+}
